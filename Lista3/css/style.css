@@ -1,0 +1,102 @@
+/*
+ * CSS Tema: Hacker/Terminal
+ * Fundo Preto com Destaques em Verde Neon
+ */
+
+:root {
+    --cor-fundo: #000000; /* Preto absoluto */
+    --cor-primaria: #00ff41; /* Verde Neon/Elétrico */
+    --cor-secundaria: #0a0a0a; /* Preto muito escuro para elementos */
+    --cor-texto: #00ff41; /* Texto em verde neon */
+    --fonte-principal: 'Inconsolata', 'Consolas', 'Monospace', monospace; /* Fonte Monospace */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Importação de fonte (Inconsolata) - Necessário adicionar no HTML */
+/* @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap'); */
+
+body {
+    background-color: var(--cor-fundo);
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    /* Efeito sutil de scanline/CRT */
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px);
+    background-size: 100% 2px; */
+}
+
+.centro {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--cor-secundaria);
+    padding: 40px;
+    border-radius: 0; /* Estilo de terminal sem bordas arredondadas */
+    border: 2px solid var(--cor-primaria); /* Borda de terminal */
+    box-shadow: 0 0 20px var(--cor-primaria); /* Brilho neon forte */
+    text-align: center;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.centro:hover {
+    box-shadow: 0 0 30px var(--cor-primaria); /* Brilho mais intenso no hover */
+}
+
+.centro h1 {
+    color: var(--cor-primaria);
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px var(--cor-primaria); /* Brilho no título */
+    text-transform: uppercase;
+}
+
+/* Estilo para o resultado (se estiver dentro de .centro) */
+.centro p {
+    font-size: 1.1em;
+    margin-top: 15px;
+    color: var(--cor-texto);
+}
+
+
+main {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+button {
+    font-family: var(--fonte-principal);
+    font-weight: 700;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    border-radius: 0; /* Estilo de terminal */
+    border: 1px solid var(--cor-primaria);
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    box-shadow: 0 0 10px var(--cor-primaria);
+}
+
+button:hover {
+    background-color: var(--cor-fundo); /* Inverte as cores no hover */
+    color: var(--cor-primaria);
+    box-shadow: 0 0 15px var(--cor-primaria);
+}
+
+button:active {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+}
